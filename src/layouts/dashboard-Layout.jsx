@@ -5,12 +5,12 @@ import SideBar from "../components/sidebar/side";
 function DashboardLayout() {
     return (
       <div className="dashboard-layout">
-        <div className="navbar">
-          <NavBar></NavBar>
+        <div className="sidebar">
+          <SideBar></SideBar>
         </div>
         <main>
-          <div className="sidebar">
-            <SideBar></SideBar>
+          <div className="navbar">
+            <NavBar></NavBar>
           </div>
           <Outlet></Outlet>
         </main>
