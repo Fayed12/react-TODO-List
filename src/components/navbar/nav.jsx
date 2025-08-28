@@ -1,9 +1,18 @@
+import "./nav.css"
+
+// mui import 
+import AccountDemoSignedIn from "../accountUser";
 function NavBar() {
-    return ( 
-        <>
-        <h1>hello in nav bar</h1>
-        </>
-     );
+    return (
+      <div className="nav-bar-content">
+        <div className="logo">
+          <img src="../../../public/Taskify-logo.png" alt="taskify"/>
+            </div>
+            <div className="user-details">
+                <AccountDemoSignedIn />
+            </div>
+      </div>
+    );
 }
 
 export default NavBar;

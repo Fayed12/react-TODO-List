@@ -12,10 +12,22 @@
     height: 100vh;
 }
 
+.dashboard-layout .sidebar{
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+
 .dashboard-layout main{
     flex: 1;
 }
 
 .dashboard-layout .navbar{
-    background-color: green;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+
+.dashboard-layout main .page-content{
+    height: calc(100vh - 70px);
 }

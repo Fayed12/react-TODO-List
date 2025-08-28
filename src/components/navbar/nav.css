@@ -1,0 +1,14 @@
+.nav-bar-content {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #121212;
+    color: white;
+}
+
+.nav-bar-content .logo img{
+    width: 100px;
+}

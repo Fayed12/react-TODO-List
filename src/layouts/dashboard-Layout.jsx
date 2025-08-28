@@ -12,7 +12,9 @@ function DashboardLayout() {
           <div className="navbar">
             <NavBar></NavBar>
           </div>
-          <Outlet></Outlet>
+          <div className="page-content">
+            <Outlet></Outlet>
+          </div>
         </main>
       </div>
     );
