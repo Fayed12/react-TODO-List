@@ -39,7 +39,7 @@ function SideBar() {
       </div>
       <div className="logo">
         <img src="../../../public/todo.webp" alt="logo" />
-        <p>toDo</p>
+        <p>taskify</p>
       </div>
       <div className="links">
         <ul>
