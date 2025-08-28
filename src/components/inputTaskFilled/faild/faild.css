@@ -1,0 +1,25 @@
+.fail-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #d32f2f;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  animation: slideIn 0.4s ease-out;
+  z-index: 1000;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

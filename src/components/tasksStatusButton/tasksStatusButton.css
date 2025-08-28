@@ -1,10 +1,20 @@
-.button-status button{
-    padding: 7px 13px;
-    outline: none;
-    border: 1px solid white;
-    background-color: #42a5f5;
-    color: white;
-    border-radius: 5px;
-    margin: 3px;
-    cursor: pointer;
+.button-status button {
+  padding: 7px 15px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: none;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  color: #42a5f5;
+  background-color: white;
+  transition: .4s;
+  border: 1px solid transparent;
+}
+
+.button-status button:hover{
+  background-color: #42a5f5;
+  color: white;
+  border-color:white ;
 }

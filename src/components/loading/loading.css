@@ -1,0 +1,67 @@
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(1200px 800px at 10% 10%, #42a5f5 10%, transparent 60%),
+    radial-gradient(1200px 800px at 90% 20%, #84b4db 10%, transparent 60%),
+    radial-gradient(1200px 800px at 50% 90%, #1e88e5 10%, transparent 60%),
+    linear-gradient(180deg, #0c1117 0%, #121212 60%, #0c1117 100%);
+  filter: blur(14px);
+  transform: scale(1.1);
+  animation: floatBg 12s ease-in-out infinite alternate;
+  opacity: 0.9;
+}
+
+@keyframes floatBg {
+  from { transform: scale(1.1) translateY(0px); }
+  to   { transform: scale(1.12) translateY(-8px); }
+}
+
+.loading-card {
+  position: relative;
+  width: min(400px, 90vw);
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: rgba(18, 18, 18, 0.6);
+  box-shadow: 0 8px 28px rgba(18, 18, 18, 0.6), 0 0 0 1px rgba(255,255,255,0.06) inset;
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  backdrop-filter: blur(10px) saturate(140%);
+  color: #fff;
+  text-align: center;
+}
+
+.spinner {
+  width: 70px;
+  height: 70px;
+  border: 6px solid rgba(255,255,255,0.2);
+  border-top: 6px solid #42a5f5;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-title {
+  margin: 0 0 12px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.hint {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import AddTaskPopup from "../../components/popupInput";
 import TasksStatusButton from "../../components/tasksStatusButton/tasksStatusButton";
 import { Outlet } from "react-router";
+import { tasksContext } from "../../context/userTasksContext";
 
 function TodoPage() {
   const [searchValue, setSearchValue] = useState();
@@ -16,37 +17,50 @@ function TodoPage() {
 
   return (
     <div className="tasks-content">
-      <div className="header">
-        <div className="title">
-          <h1>My Todo</h1>
-        </div>
-        <div className="search">
-          <BasicTextFields
-            inputValue={searchValue}
-            onchange={handleSearchInput}
-          />
-        </div>
-      </div>
-      <div className="body">
-        <Outlet></Outlet>
-        <div className="add-task">
-          <AddTaskPopup tasksValue={todoTasks} onchange={setTodoTasks} />
-        </div>
-        <div className="task-status">
-          <div className="all-tasks">
-            <TasksStatusButton buttonName="All Tasks" status="allTasks" />
+      <tasksContext.Provider value={todoTasks}>
+        <div className="header">
+          <div className="title">
+            <h1>My Todo</h1>
           </div>
-          <div className="inprogress-tasks">
-            <TasksStatusButton
-              buttonName="In Progress"
-              status="inProgressTasks"
+          <div className="search">
+            <BasicTextFields
+              inputValue={searchValue}
+              onchange={handleSearchInput}
             />
           </div>
-          <div className="done-tasks">
-            <TasksStatusButton buttonName="Done" status="doneTasks" />
+        </div>
+        <div className="body">
+          <Outlet></Outlet>
+        </div>
+        <div className="footer">
+          <div className="add-task">
+            <AddTaskPopup tasksValue={todoTasks} onchange={setTodoTasks} />
+          </div>
+          <div className="task-status">
+            <div className="all-tasks">
+              <TasksStatusButton
+                buttonName="All Tasks"
+                status="allTasks"
+                className="allTasks"
+              />
+            </div>
+            <div className="inprogress-tasks">
+              <TasksStatusButton
+                buttonName="In Progress"
+                status="inProgressTasks"
+                className="inProgressTasks"
+              />
+            </div>
+            <div className="done-tasks">
+              <TasksStatusButton
+                buttonName="Done"
+                status="doneTasks"
+                className="doneTasks"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </tasksContext.Provider>
     </div>
   );
 }
