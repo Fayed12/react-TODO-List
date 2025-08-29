@@ -8,6 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 function AllTasks() {
   const { todoTasks, setTodoTasks } = useContext(tasksContext);
   const [openDial, setOpenDial] = useState(null);
+  const [editStatus, setEditStatus] = useState(null);
 
   const toggleDial = (id) => {
     setOpenDial(openDial === id ? null : id);
@@ -29,6 +30,17 @@ function AllTasks() {
     if (todoTasks && todoTasks.length > 0) {
       setTodoTasks((prev) => prev.filter((task) => task.id !== id));
     }
+  }
+
+  // handle the edit button
+  function handleEditButton(id) {
+    setEditStatus(id);
+    // close the Dialog after press the edit button
+    setOpenDial(openDial === id ? null : id);
+  }
+
+  function handleSaveChanges() {
+    setEditStatus(null)
   }
 
   if (!todoTasks || todoTasks.length === 0) {
@@ -53,8 +65,18 @@ function AllTasks() {
                 />
               </div>
               <div className="task-info">
-                <h3>{task.taskTitle}</h3>
-                <p>{task.taskDescription}</p>
+                <div
+                  className={`description ${editStatus === task.id ? "hide" : "display"}`}
+                >
+                  <h3>{task.taskTitle}</h3>
+                  <p>{task.taskDescription}</p>
+                </div>
+                <div
+                  className={`edit-value ${editStatus !== task.id ? "hide" : "display"}`}
+                >
+                  <input type="text" name="editValue" />
+                  <button onClick={handleSaveChanges}>Save</button>
+                </div>
               </div>
             </div>
 
@@ -71,7 +93,10 @@ function AllTasks() {
 
                 {openDial === task.id && (
                   <div className="speed-actions left">
-                    <button className="speed-btn edit-btn">
+                    <button
+                      onClick={() => handleEditButton(task.id)}
+                      className="speed-btn edit-btn"
+                    >
                       <EditIcon />
                     </button>
                     <button

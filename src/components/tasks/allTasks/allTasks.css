@@ -152,3 +152,11 @@
   margin-top: 50px;
   color: white;
 }
+
+.hide{
+  display: none;
+}
+
+.display{
+  display: block;
+}
