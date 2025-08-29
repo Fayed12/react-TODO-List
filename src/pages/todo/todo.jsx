@@ -4,6 +4,7 @@ import { useState } from "react";
 import AddTaskPopup from "../../components/popupInput";
 import TasksStatusButton from "../../components/tasksStatusButton/tasksStatusButton";
 import { Outlet } from "react-router";
+// eslint-disable-next-line no-unused-vars
 import { tasksContext } from "../../context/userTasksContext";
 
 function TodoPage() {
@@ -17,7 +18,7 @@ function TodoPage() {
 
   return (
     <div className="tasks-content">
-      <tasksContext.Provider value={todoTasks}>
+      <tasksContext.Provider value={{todoTasks, setTodoTasks }}>
         <div className="header">
           <div className="title">
             <h1>My Todo</h1>

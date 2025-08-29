@@ -18,3 +18,9 @@
   color: white;
   border-color:white ;
 }
+
+.button-status.active button{
+  background-color: #42a5f5;
+  color: white;
+  border-color:white ;
+}

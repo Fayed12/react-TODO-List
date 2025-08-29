@@ -1,42 +1,84 @@
 import "./allTasks.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { tasksContext } from "../../../context/userTasksContext";
+import SettingsIcon from "@mui/icons-material/Settings";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function AllTasks() {
-  const Tasks = useContext(tasksContext);
-  let tasksList;
+  const { todoTasks, setTodoTasks } = useContext(tasksContext);
+  const [openDial, setOpenDial] = useState(null);
 
-  if (Tasks && Tasks.length > 0) {
-    tasksList = Tasks.map((task) => (
-      <li key={task.id} className="task-card">
-        <div className="task-left">
-          <input type="checkbox" className="task-check" />
-          <div className="task-info">
-            <h3>{task.taskTitle}</h3>
-            <p>{task.taskDescription}</p>
-          </div>
-        </div>
-        <div className="task-actions">
-          <button className="edit-btn">Edit</button>
-          <button className="delete-btn">Delete</button>
-        </div>
-      </li>
-    ));
+  const toggleDial = (id) => {
+    setOpenDial(openDial === id ? null : id);
+  };
+  
+  // function to handle the checked or not this mean done or not 
+  function handleCheckedStatus(e , id) {
+    if (todoTasks.length >0) {
+      setTodoTasks(
+        todoTasks.map((task) =>
+        task.id == id ? { ...task, taskStatusDone: e.target.checked } : task
+      )
+      )
+    }
   }
 
-  if (!Tasks || Tasks.length === 0) {
+  if (!todoTasks || todoTasks.length === 0) {
     return (
       <div className="empty">
-        <h1>Start setting your tasks with us</h1>
-      </div>
-    );
-  } else {
-    return (
-      <div className="show-tasks">
-        <ul>{tasksList}</ul>
+        <h1>Start setting your tasks with us !</h1>
       </div>
     );
   }
+
+  return (
+    <div className="show-tasks">
+      <ul>
+        {todoTasks.map((task) => (
+          <li key={task.id} className="task-card">
+            <div className="task-left">
+              <div className="check-box">
+                <input
+                  type="checkbox"
+                  className="task-check"
+                  onChange={(e) => handleCheckedStatus(e , task.id)}
+                />
+              </div>
+              <div className="task-info">
+                <h3>{task.taskTitle}</h3>
+                <p>{task.taskDescription}</p>
+              </div>
+            </div>
+
+            <div className="task-actions">
+              <div className="speed-dial">
+                <div className="setting-button">
+                  <button
+                    className="speed-main"
+                    onClick={() => toggleDial(task.id)}
+                  >
+                    <SettingsIcon />
+                  </button>
+                </div>
+
+                {openDial === task.id && (
+                  <div className="speed-actions left">
+                    <button className="speed-btn edit-btn">
+                      <EditIcon />
+                    </button>
+                    <button className="speed-btn delete-btn">
+                      <DeleteIcon />
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default AllTasks;

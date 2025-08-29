@@ -28,7 +28,7 @@ export default function AddTaskPopup({ tasksValue, onchange }) {
     if (task.trim() !== "" && description.trim() !== "") {
       onchange([
         ...tasksValue,
-        { id: taskId, taskTitle: task, taskDescription: description },
+        { id: taskId, taskTitle: task, taskDescription: description , taskStatusDone: false },
       ]);
       setTask("");
       setDescription("");
