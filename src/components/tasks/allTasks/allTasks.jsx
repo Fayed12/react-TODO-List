@@ -12,15 +12,22 @@ function AllTasks() {
   const toggleDial = (id) => {
     setOpenDial(openDial === id ? null : id);
   };
-  
-  // function to handle the checked or not this mean done or not 
-  function handleCheckedStatus(e , id) {
-    if (todoTasks.length >0) {
+
+  // function to handle the checked or not this mean done or not
+  function handleCheckedStatus(e, id) {
+    if (todoTasks.length > 0) {
       setTodoTasks(
         todoTasks.map((task) =>
-        task.id == id ? { ...task, taskStatusDone: e.target.checked } : task
-      )
-      )
+          task.id == id ? { ...task, taskStatusDone: e.target.checked } : task
+        )
+      );
+    }
+  }
+
+  // handle the delete function
+  function handleDeleteButton(id) {
+    if (todoTasks && todoTasks.length > 0) {
+      setTodoTasks((prev) => prev.filter((task) => task.id !== id));
     }
   }
 
@@ -42,7 +49,7 @@ function AllTasks() {
                 <input
                   type="checkbox"
                   className="task-check"
-                  onChange={(e) => handleCheckedStatus(e , task.id)}
+                  onChange={(e) => handleCheckedStatus(e, task.id)}
                 />
               </div>
               <div className="task-info">
@@ -67,7 +74,10 @@ function AllTasks() {
                     <button className="speed-btn edit-btn">
                       <EditIcon />
                     </button>
-                    <button className="speed-btn delete-btn">
+                    <button
+                      onClick={() => handleDeleteButton(task.id)}
+                      className="speed-btn delete-btn"
+                    >
                       <DeleteIcon />
                     </button>
                   </div>
