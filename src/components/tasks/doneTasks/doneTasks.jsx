@@ -1,11 +1,19 @@
-import "./doneTasks.css"
+import TaskDisplay from "../../task-display/taskDispaly";
+import { useContext } from "react";
+import { tasksContext } from "../../../context/userTasksContext";
 
-function DoneTasks() {
-    return ( 
-        <>
-        <h1>hello in done tasks</h1>
-        </>
-     );
+function InProgressTasks() {
+    const { todoTasks } = useContext(tasksContext);
+
+  // filter the none checked tasks
+  const DoneTasks = todoTasks.filter((task) => {
+    return task.taskStatusDone === true;
+  });
+  return (
+    <>
+      <TaskDisplay tasks={DoneTasks}/>
+    </>
+  );
 }
 
-export default DoneTasks;
+export default InProgressTasks;

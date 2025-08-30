@@ -22,7 +22,6 @@ export default function AddTaskPopup({ tasksValue, onchange }) {
   const [failPopup, setFailPopup] = useState(false);
   const [successPopup, setSuccessPopup] = useState(false);
 
-
   // function handle adding new task
   function handleAddTasks() {
     if (task.trim() !== "" && description.trim() !== "") {
@@ -34,11 +33,15 @@ export default function AddTaskPopup({ tasksValue, onchange }) {
       setDescription("");
       setOpen(false);
       setTaskId(taskId + 1);
+
+      // success popup
       setSuccessPopup(true)
       setTimeout(() => {
         setSuccessPopup(false)
       }, 4000);
     } else {
+
+      // set failed popup
       setFailPopup(true);
       setTimeout(() => {
       setFailPopup(false);
@@ -49,14 +52,13 @@ export default function AddTaskPopup({ tasksValue, onchange }) {
   }
 
   // function to handle got to all tasks if the user want to add new tasks
-
   function handleNavigateToAllTasks() {
     setLoadingDelay(true)
     setTimeout(() => {
       navigate("/todo/allTasks", { replace: true })
       setLoadingDelay(false);
       setOpen(true);
-    }, 2000);
+    }, 1500);
   }
   return (
     <>
