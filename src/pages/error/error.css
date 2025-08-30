@@ -1,0 +1,160 @@
+:root{
+  --bg1: #0f172a;
+  --bg2: #061226;
+  --card: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.04);
+  --accent: #60a5fa;
+  --accent-2: #7dd3fc;
+  --soft: rgba(255,255,255,0.06);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient( circle at 10% 10%, rgba(96,165,250,0.06), transparent 8%),
+              linear-gradient(180deg, var(--bg1), var(--bg2));
+  color: #e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* page container */
+.error-page{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height: calc(100vh - 80px);
+}
+
+/* scene */
+.scene{position:relative; width:100%; max-width:980px; margin:0 auto;}
+
+/* floating background orbs */
+.bg-orb{
+  position:absolute;
+  border-radius:50%;
+  filter: blur(40px);
+  opacity:0.55;
+  transform-origin: center;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+.orb1{width:260px;height:260px; left:-60px; top:-40px; background:linear-gradient(135deg,var(--accent),#8b5cf6); animation-delay:0s}
+.orb2{width:180px;height:180px; right:-40px; top:40px; background:linear-gradient(135deg,#fb7185,var(--accent)); animation-duration:10s; animation-delay:2s}
+.orb3{width:120px;height:120px; left:60%; top:-60px; background:linear-gradient(135deg,#34d399,#60a5fa); animation-duration:7s; animation-delay:-1s}
+
+@keyframes floatOrb{
+  0%{transform: translateY(0) scale(1)}
+  50%{transform: translateY(-18px) scale(1.05)}
+  100%{transform: translateY(0) scale(1)}
+}
+
+/* card */
+.card{
+  position:relative;
+  display:flex;
+  gap:28px;
+  align-items:center;
+  padding:28px;
+  border-radius:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+  overflow: visible;
+}
+
+/* illustration column */
+.illustration{
+  width:360px;
+  height:240px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+
+/* robot svg size + animation */
+.robot{ width:280px; height:auto; display:block; transform-origin:center; animation: bob 3.6s ease-in-out infinite; }
+@keyframes bob{ 0%{transform:translateY(0)} 50%{transform:translateY(-8px) scale(1.01)} 100%{transform:translateY(0)} }
+
+/* eyes blink */
+.robot .eye{ transform-origin:center; animation: blink 3.2s infinite; }
+.robot .eye.left{ animation-delay: 0.1s }
+.robot .eye.right{ animation-delay: 0.4s }
+@keyframes blink {
+  0%, 88% { transform: scaleY(1) }
+  90% { transform: scaleY(0.08) }
+  92% { transform: scaleY(1) }
+}
+
+/* antenna blink dot pulse */
+.robot .antenna-dot{ animation: pulse 2s infinite; transform-origin:center }
+@keyframes pulse { 0%{transform:scale(1);opacity:1}50%{transform:scale(1.35);opacity:0.7}100%{transform:scale(1);opacity:1} }
+
+/* x-mark shake when appears */
+.robot .x-mark{ animation: shake 1.6s ease-in-out infinite; transform-origin:center; }
+@keyframes shake{
+  0%{transform:rotate(20deg) translateY(0)} 50%{transform:rotate(18deg) translateY(-4px)} 100%{transform:rotate(20deg) translateY(0)}
+}
+
+/* little paper planes */
+.paper{ position:absolute; width:40px; opacity:0.95; }
+.plane1{ left:-10px; top:10px; animation: fly1 6s linear infinite; }
+.plane2{ right:-10px; bottom:10px; animation: fly2 7s linear infinite; }
+@keyframes fly1{ 0%{transform:translate(-20px,0) rotate(-10deg)} 50%{transform:translate(50px,-30px) rotate(10deg)} 100%{transform:translate(-20px,0) rotate(-10deg)} }
+@keyframes fly2{ 0%{transform:translate(20px,0) rotate(10deg)} 50%{transform:translate(-50px,-40px) rotate(-8deg)} 100%{transform:translate(20px,0) rotate(10deg)} }
+
+/* text column */
+.card-text{ max-width:420px; padding-right:12px; }
+.card-text h1{ margin:0 0 12px 0; font-size:28px; letter-spacing:0.4px; color:#f1f8ff; }
+.card-text p{ margin:0 0 18px 0; color: #cfe6ff; line-height:1.5; }
+
+/* buttons */
+.actions{ display:flex; gap:12px; align-items:center; margin-top:10px; }
+.btn{
+  border:0; cursor:pointer; padding:10px 16px; border-radius:10px; font-weight:600; font-size:15px;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .12s ease;
+  background:transparent; color:inherit;
+}
+.btn:active{ transform: translateY(2px) }
+.btn.primary{
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#061226;
+  box-shadow: 0 8px 28px rgba(96,165,250,0.18), 0 2px 6px rgba(0,0,0,0.25);
+}
+.btn.ghost{
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #d9f1ff;
+}
+
+/* confetti */
+.confetti{ position:absolute; inset:0; pointer-events:none; }
+.confetti .c{
+  position:absolute; width:8px; height:14px; border-radius:2px;
+  opacity:0.95; transform-origin:center;
+  animation: confetti-fall linear infinite;
+}
+.c1{ left:10%; top:-5%; background:#ffb86b; animation-duration:5s; animation-delay:0.1s }
+.c2{ left:20%; top:-10%; background:#7dd3fc; animation-duration:6s; animation-delay:0.5s }
+.c3{ left:30%; top:-7%; background:#a78bfa; animation-duration:4.5s; animation-delay:0.2s }
+.c4{ left:40%; top:-12%; background:#60a5fa; animation-duration:6.2s; animation-delay:0.8s }
+.c5{ left:50%; top:-6%; background:#fca5a5; animation-duration:5.8s; animation-delay:0.3s }
+.c6{ left:60%; top:-9%; background:#fef08a; animation-duration:4.9s; animation-delay:0.6s }
+.c7{ left:70%; top:-4%; background:#86efac; animation-duration:5.3s; animation-delay:0.4s }
+.c8{ left:80%; top:-11%; background:#ffb86b; animation-duration:6.1s; animation-delay:0.2s }
+.c9{ left:15%; top:-3%; background:#f472b6; animation-duration:5.7s; animation-delay:0.7s }
+.c10{ left:85%; top:-8%; background:#60a5fa; animation-duration:4.6s; animation-delay:0.35s }
+.c11{ left:45%; top:-10%; background:#f97316; animation-duration:5.4s; animation-delay:0.15s }
+.c12{ left:95%; top:-6%; background:#a78bfa; animation-duration:6.4s; animation-delay:0.25s }
+
+@keyframes confetti-fall{
+  0%{ transform: translateY(-10vh) rotate(0deg); opacity:1 }
+  100%{ transform: translateY(110vh) rotate(360deg); opacity:0.02 }
+}
+
+/* responsiveness */
+@media (max-width:880px){
+  .card{ flex-direction:column; align-items:center; padding:20px; gap:18px; }
+  .illustration{ width:100%; height:220px }
+  .card-text{ max-width:100%; text-align:center }
+}

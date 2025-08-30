@@ -97,11 +97,15 @@ function TaskDisplay({ tasks}) {
   }
 
   function handleEditTaskValue(e, id) {
-    setTodoTasks(
-      tasks.map((task) =>
-        task.id == id ? { ...task, taskTitle: e.target.value } : task
-      )
-    );
+    if (e.target.value == "") {
+      alert("please enter you new value !!")
+    }else {
+      setTodoTasks(
+        tasks.map((task) =>
+          task.id == id ? { ...task, taskTitle: e.target.value } : task
+        )
+      );
+    }
   }
 
   if (!tasks || tasks.length === 0) {

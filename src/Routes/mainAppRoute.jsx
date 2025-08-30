@@ -5,11 +5,13 @@ import DashboardLayout from "../layouts/dashboard-Layout";
 import AllTasks from "../components/tasks/allTasks/allTasks";
 import InProgressTasks from "../components/tasks/inProgress/inProgressTasks";
 import DoneTasks from "../components/tasks/doneTasks/doneTasks";
+import ErrorPage from "../pages/error/error";
 
 export const AppRouter = createBrowserRouter([
   {
     path: "/",
     element: <DashboardLayout />,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       { index: true, element: <HomePage /> },
       {
