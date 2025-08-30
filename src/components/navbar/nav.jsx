@@ -6,7 +6,7 @@ function NavBar() {
     return (
       <div className="nav-bar-content">
         <div className="logo">
-          <img src="../../../public/Taskify-logo.png" alt="taskify"/>
+          <img src="/Taskify-logo.png" alt="taskify"/>
             </div>
             <div className="user-details">
                 <AccountDemoSignedIn />

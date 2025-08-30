@@ -38,7 +38,7 @@ function SideBar() {
         </Stack>
       </div>
       <div className="logo">
-        <img src="../../../public/todo.webp" alt="logo" />
+        <img src="/todo.webp" alt="logo" />
         <p>taskify</p>
       </div>
       <div className="links">

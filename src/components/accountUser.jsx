@@ -6,7 +6,7 @@ const demoSession = {
   user: {
     name: "Mohamed Fayed",
     email: "memad4858@gmail.com",
-    image: "../../public/user.jpg",
+    image: "/user.jpg",
   },
 };
 
