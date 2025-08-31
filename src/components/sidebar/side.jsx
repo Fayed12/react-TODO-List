@@ -63,7 +63,7 @@ function SideBar() {
             </NavLink>
             <NavLink to="/contact">
               <Button size="medium" startIcon={<AddCallIcon />}>
-                Contact us
+                Contact
               </Button>
             </NavLink>
           </Stack>
