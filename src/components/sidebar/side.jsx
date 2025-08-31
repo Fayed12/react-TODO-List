@@ -54,6 +54,11 @@ function SideBar() {
                 ToDo
               </Button>
             </NavLink>
+            <NavLink to="/about">
+              <Button size="medium" startIcon={<List />}>
+                About
+              </Button>
+            </NavLink>
           </Stack>
         </ul>
       </div>

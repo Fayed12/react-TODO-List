@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from "react-router";
+import { createBrowserRouter } from "react-router";
 import HomePage from "../pages/home/home";
 import TodoPage from "../pages/todo/todo";
 import DashboardLayout from "../layouts/dashboard-Layout";
@@ -7,6 +7,7 @@ import InProgressTasks from "../components/tasks/inProgress/inProgressTasks";
 import DoneTasks from "../components/tasks/doneTasks/doneTasks";
 import ErrorPage from "../pages/error/error";
 import SearchTasks from "../components/searchTasks";
+import About from "../pages/about/about";
 
 export const AppRouter = createBrowserRouter([
   {
@@ -37,7 +38,9 @@ export const AppRouter = createBrowserRouter([
             path: "searchTasks",
             element:<SearchTasks/>
           }
-      ]},
+        ]
+      },
+      {path:"about", element:<About/>}
     ],
   },
 ]);
