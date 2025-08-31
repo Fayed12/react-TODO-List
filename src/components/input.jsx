@@ -7,11 +7,10 @@ export default function SearchField({ inputValue, onchange }) {
   return (
     <Box
       component="form"
-      sx={
-        {
-          borderRadius:"20px",
-          "& > :not(style)": { m: 1, width: "30ch" }
-        }}
+      sx={{
+        borderRadius: "20px",
+        "& > :not(style)": { m: 1, width: "30ch" },
+      }}
       noValidate
       autoComplete="off"
     >
@@ -27,10 +26,10 @@ export default function SearchField({ inputValue, onchange }) {
               <SearchIcon sx={{ color: "#c3ced7ff", fontSize: 22 }} />
             </InputAdornment>
           ),
-          style: { color: "black" , borderRadius:"15px"},
+          style: { color: "black", borderRadius: "15px" },
         }}
         sx={{
-          borderRadius:"15px",
+          borderRadius: "15px",
           "& .MuiOutlinedInput-root": {
             "& fieldset": {
               borderColor: "white",

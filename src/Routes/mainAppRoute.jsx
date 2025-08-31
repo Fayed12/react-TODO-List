@@ -6,6 +6,7 @@ import AllTasks from "../components/tasks/allTasks/allTasks";
 import InProgressTasks from "../components/tasks/inProgress/inProgressTasks";
 import DoneTasks from "../components/tasks/doneTasks/doneTasks";
 import ErrorPage from "../pages/error/error";
+import SearchTasks from "../components/searchTasks";
 
 export const AppRouter = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const AppRouter = createBrowserRouter([
           {
             path: "doneTasks",
             element:<DoneTasks/>
+          },
+          {
+            path: "searchTasks",
+            element:<SearchTasks/>
           }
       ]},
     ],
