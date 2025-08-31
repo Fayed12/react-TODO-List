@@ -75,6 +75,8 @@
 .side-bar-content .links ul {
   list-style: none;
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .side-bar-content .MuiStack-root {
@@ -115,6 +117,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+   min-width: auto;
 }
 
 .side-bar-content .links ul .MuiStack-root a.active button {
@@ -145,7 +148,8 @@
 
 @media (width <= 700px) {
   .side-bar-content {
-    width: 100px !important;
+    width: 80px !important;
+    padding: 0;
   }
   .closed {
     display: none ;
@@ -155,13 +159,13 @@
   margin: 0;
 }
   .side-bar-content .logo img {
-    width: 40px ;
+    width: 35px ;
     margin-bottom: 5px ;
     margin-top: 30px ;
   }
 
   .side-bar-content .logo p {
-    font-size: 20px ;
+    font-size: 17px ;
     font-weight: 700 ;
     letter-spacing: 1px ;
   }
@@ -187,8 +191,5 @@
     flex-direction: column ;
     justify-content: center;
     align-items: center;
-  }
-  .side-bar-content .links {
-    padding: 5px ;
   }
 }

@@ -16,6 +16,7 @@
 .dashboard-layout .sidebar{
     position: sticky;
     top: 0px;
+    left: 0;
     z-index: 1000;
 }
 

@@ -45,7 +45,7 @@ function SideBar() {
       </div>
       <div className="links">
         <ul>
-          <Stack direction="row" spacing={2}>
+          <Stack direction="row">
             <NavLink to="/">
               <Button size="medium" startIcon={<Home />}>
                 Home
