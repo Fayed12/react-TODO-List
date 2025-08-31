@@ -1,21 +1,26 @@
 import "./todo.css";
 import BasicTextFields from "../../components/input";
-import { useState } from "react";
 import AddTaskPopup from "../../components/popupInput";
 import TasksStatusButton from "../../components/tasksStatusButton/tasksStatusButton";
-import { Outlet } from "react-router";
 // eslint-disable-next-line no-unused-vars
 import { tasksContext } from "../../context/userTasksContext";
 // eslint-disable-next-line no-unused-vars
 import { searchContext } from "../../context/searchDataContext";
+
+// react and react router imports
+import { useState } from "react";
+import { Outlet } from "react-router";
 import { useSearchParams } from "react-router";
+import { useNavigate } from "react-router";
 
 function TodoPage() {
   const [todoTasks, setTodoTasks] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   let taskTitleFromSearchParams = searchParams.get("title") || "";
+  const navigate = useNavigate()
   
    function handleSearch (e){
+     navigate("/todo/searchTasks");
      setSearchParams({ title: e.target.value });
    };
 

@@ -38,20 +38,16 @@ function TaskDisplay({ tasks}) {
     if (!confirmDone) {
         alert("The action has been blocked !!")
     } else {
-        let finalConfirm = window.confirm("If you make task Done you Can not change it again, continue ?");
-        if (!finalConfirm) {
-            alert("The action has been blocked !!")
-        } else {
-            if (tasks.length > 0) {
-              setTodoTasks(
-                tasks.map((task) =>
-                  task.id == id
-                    ? { ...task, taskStatusDone: e.target.checked }
-                    : task
-                )
-                );
-                setTaskDone(true)
-            }
+        if (tasks.length > 0) {
+          setTodoTasks(
+            tasks.map((task) =>
+              task.id == id
+                ? { ...task, taskStatusDone: e.target.checked }
+                : task
+            )
+          );
+          setTaskDone(true);
+          setEditStatus(null);
         }
     }
   }

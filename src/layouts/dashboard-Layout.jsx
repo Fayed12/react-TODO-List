@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router";
+import {Outlet } from "react-router";
 import NavBar from "../components/navbar/nav";
 import SideBar from "../components/sidebar/side";
 
