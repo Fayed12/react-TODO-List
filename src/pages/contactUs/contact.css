@@ -72,3 +72,38 @@
 .contact-form button:hover {
   background: #1693f8;
 }
+
+@media (width <= 768px) {
+  .contact-container {
+    max-width: 220px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .contact-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .contact-text {
+    font-size: .6rem;
+    margin-bottom: 20px;
+  }
+  .contact-form {
+    gap: 10px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border-radius: 7px;
+    font-size: .7rem;
+  }
+
+  /* Button */
+  .contact-form button {
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 7px;
+  }
+}

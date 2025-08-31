@@ -24,3 +24,12 @@
   color: white;
   border-color:white ;
 }
+
+@media (width <= 768px) {
+  .button-status button {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

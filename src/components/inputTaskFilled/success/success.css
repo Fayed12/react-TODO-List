@@ -23,3 +23,12 @@
     opacity: 1;
   }
 }
+
+
+@media (width <= 768px) {
+  .success-popup  {
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+}

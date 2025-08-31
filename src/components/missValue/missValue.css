@@ -12,3 +12,10 @@
   border-radius: 5px;
   display: inline-block;
 }
+
+@media (width <= 768px) {
+  .miss-value-text {
+    font-size: 12px;
+    padding: 3px 7px;
+  }
+}

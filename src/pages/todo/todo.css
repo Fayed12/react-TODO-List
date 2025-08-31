@@ -60,3 +60,62 @@
     padding: 15px;
     border-radius: 10px;
 }
+
+@media (width <= 786px) {
+    .tasks-content{
+        padding: 10px;
+    }
+    .tasks-content .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        margin-bottom: 15px;
+        border-radius: 7px;
+        color: white;
+        width: 100%;
+        margin-inline: auto;
+    }
+    .header .title h1{
+        font-size: 20px;
+    }
+    .header input{
+        padding: 10px;
+    }
+    .header .MuiFormControl-root {
+        width: fit-content;
+    }
+    .tasks-content .body{
+        border-radius: 7px;
+        padding: 5px;
+        margin-bottom: 15px;
+    }
+
+    .tasks-content .body::-webkit-scrollbar{
+        width: 4px;
+    }
+
+    .tasks-content .body::-webkit-scrollbar-track{
+        background-color: white;
+    }
+
+    .tasks-content .body::-webkit-scrollbar-thumb{
+        background-color: #42a5f5;
+        border-radius: 10px;
+    }
+
+    .task-status {
+        display: flex;
+        gap: 4px;
+    }
+
+    .footer{
+        padding: 5px;
+        border-radius: 7px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

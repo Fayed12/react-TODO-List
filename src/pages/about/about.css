@@ -11,8 +11,6 @@
 .about{
   min-height: 100%;
   padding: 32px 20px 64px;
-  background: radial-gradient(1200px 600px at 10% -10%, #0b1222 0%, var(--bg) 40%),
-              radial-gradient(900px 500px at 110% 10%, #0b162a 0%, var(--bg) 35%);
   color: var(--text);
 }
 

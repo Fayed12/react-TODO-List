@@ -6,6 +6,8 @@
   height: 100%;
   text-align: center;
   padding: 20px;
+  background: linear-gradient(to right , #121212 , #ffffff );
+  color: black;
 }
 
 .home-title {
@@ -25,12 +27,15 @@
   font-weight: bold;
 }
 
-:root[data-toolpad-color-scheme="light"] .home-container {
-  background: linear-gradient(135deg, #ffffff, #d0e4fa);
-  color: #000;
-}
+@media (width <= 768px) {
+  .home-title {
+    font-size: 1.6rem;
+  }
+  .home-subtitle {
+    font-size: .8rem;
+  }
+  .home-btn button span {
+    font-size: 15px;
+  }
 
-:root[data-toolpad-color-scheme="dark"] .home-container {
-  background: linear-gradient(135deg, #121212, #2e2e2e);
-  color: #fff;
 }

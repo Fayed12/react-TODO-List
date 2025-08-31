@@ -4,7 +4,7 @@ function MessageSuccess({ userName }) {
   return (
     <div className="popup-overlay">
       <div className="popup-box">
-        <h2>✅ Message Sent</h2>
+        <h2>Message Sent</h2>
         <p>
           Thank you <strong>{userName}</strong> for your message
         </p>

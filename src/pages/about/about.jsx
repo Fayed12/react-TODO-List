@@ -2,6 +2,7 @@ import "./about.css";
 import { NavLink } from "react-router";
 
 function About() {
+  
   return (
     <main className="about">
       <section className="about__hero">

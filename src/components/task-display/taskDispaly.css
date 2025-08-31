@@ -63,11 +63,56 @@
   color: #999;
 }
 
+
+@media (width <= 768px) {
+  .task-card {
+    height: fit-content;
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .task-left {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .task-info h3 {
+    font-size: 18px;
+    color: #1976d2;
+  }
+
+  .checked-success{
+    color: #a7c4e1;
+  }
+  .task-info p {
+    font-size: 11px;
+    color: #a9c3de;
+  }
+
+}
+
 .task-actions {
   display: flex;
   gap: 10px;
 }
 
+@media (width <= 768px) {
+  .task-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
 .speed-dial {
   position: relative;
   display: inline-block;
@@ -196,4 +241,22 @@
 
 .display{
   display: block;
+}
+
+@media (width <= 768px) {
+  .edit-value div {
+    gap: 7px;
+  }
+
+  .edit-value input{
+    background-color: #1976d2;
+    width: 130px;
+    color: white;
+  }
+
+  .edit-value button{
+    background-color: #1976d2;
+    color: white;
+    font-size: 13px;
+  }
 }

@@ -16,8 +16,8 @@ function TaskDisplay({ tasks}) {
     const [show, setShow] = useState(false);
     const [taskDone, setTaskDone] = useState(false)
     const navigate = useNavigate()
-    const location = useLocation();
-
+  const location = useLocation();
+  
   // function to trigger popup
   const handleShowPopup = () => {
     setShow(true);

@@ -33,3 +33,10 @@
 .dashboard-layout main .page-content{
     height: calc(100vh - 70px);
 }
+
+/*start add-task-button */
+@media (width <= 768px) {
+    /* .add-task-button svg{
+        width: .8em;
+    } */
+}
