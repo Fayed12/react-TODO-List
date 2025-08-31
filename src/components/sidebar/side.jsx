@@ -9,6 +9,8 @@ import Stack from "@mui/material/Stack";
 import { Home } from "@mui/icons-material";
 import { List } from "@mui/icons-material";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
+import InfoIcon from "@mui/icons-material/Info";
+import AddCallIcon from "@mui/icons-material/AddCall";
 
 function SideBar() {
   const [sideStatus, setSideStatus] = useState(false);
@@ -28,8 +30,8 @@ function SideBar() {
       <div className="closed">
         <Stack>
           <IconButton
-                      onClick={handleSideBarStatus}
-                      size="large"
+            onClick={handleSideBarStatus}
+            size="large"
             color="primary"
             aria-label="add to shopping cart"
           >
@@ -55,8 +57,13 @@ function SideBar() {
               </Button>
             </NavLink>
             <NavLink to="/about">
-              <Button size="medium" startIcon={<List />}>
+              <Button size="medium" startIcon={<InfoIcon />}>
                 About
+              </Button>
+            </NavLink>
+            <NavLink to="/contact">
+              <Button size="medium" startIcon={<AddCallIcon />}>
+                Contact us
               </Button>
             </NavLink>
           </Stack>

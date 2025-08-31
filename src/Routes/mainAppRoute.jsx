@@ -8,39 +8,43 @@ import DoneTasks from "../components/tasks/doneTasks/doneTasks";
 import ErrorPage from "../pages/error/error";
 import SearchTasks from "../components/searchTasks";
 import About from "../pages/about/about";
+import Contact from "../pages/contactUs/contact";
 
 export const AppRouter = createBrowserRouter([
   {
     path: "/",
     element: <DashboardLayout />,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       { index: true, element: <HomePage /> },
       {
-        path: "todo", element: <TodoPage />, children:[
+        path: "todo",
+        element: <TodoPage />,
+        children: [
           {
             index: true,
-            element:<AllTasks/>
+            element: <AllTasks />,
           },
           {
             path: "allTasks",
-            element:<AllTasks/>
+            element: <AllTasks />,
           },
           {
             path: "inProgressTasks",
-            element:<InProgressTasks/>
+            element: <InProgressTasks />,
           },
           {
             path: "doneTasks",
-            element:<DoneTasks/>
+            element: <DoneTasks />,
           },
           {
             path: "searchTasks",
-            element:<SearchTasks/>
-          }
-        ]
+            element: <SearchTasks />,
+          },
+        ],
       },
-      {path:"about", element:<About/>}
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact/> },
     ],
   },
 ]);

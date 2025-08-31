@@ -1,4 +1,5 @@
 import "./about.css";
+import { NavLink } from "react-router";
 
 function About() {
   return (
@@ -44,9 +45,11 @@ function About() {
       <section className="about__cta">
         <h3>Have feedback?</h3>
         <p>We’d love to hear your ideas to make My Todo better.</p>
-        <a className="about__button" href="mailto:hello@mytodo.app">
-          Contact Us
-        </a>
+        <NavLink to="/contact">
+          <a className="about__button" href="mailto:hello@mytodo.app">
+            Contact Us
+          </a>
+        </NavLink>
       </section>
     </main>
   );
